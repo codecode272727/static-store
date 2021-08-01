@@ -1,6 +1,6 @@
 <template>
   <div>Hello {{ value }}
-      <p>Test update</p>
+      <p>Test api connection</p>
   </div>
   
 </template>
