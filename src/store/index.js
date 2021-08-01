@@ -14,7 +14,8 @@ const getters = {}
 
 const actions = {
     getCompanies({ commit }) {
-        axios.get('https://webapi20210720.azurewebsites.net/api/companies')
+
+        axios.get('http://localhost:8080//api/companies')
             .then(response => {
                 commit('SET_COMPANIES', response.data)
             })
