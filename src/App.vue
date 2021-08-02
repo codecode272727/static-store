@@ -1,34 +1,23 @@
 <template>
-    <div>
-
-        <div>Hello {{ value }}</div>
-        <p>Test api connectiong</p>
-        <div v-for='company in companies' :key='company.id'>
-            <h3>Company Name: </h3>  {{company.name}}
-            <h3>Company Address: </h3>  {{company.address}}
+    <div class="container">
+        <appHeader></appHeader>
+        <div class="row">
+            <div class="col-xs-12">
+                <router-view></router-view>
+            </div>
         </div>
-
-    </div>
+</div>
   
 </template>
 
 <script>
+import Header from './components/header.vue'
+
 export default {
-  name: "App",
-  data() {
-    return {
-      value: "World"
+    name: "App",
+    components: {
+         appHeader :Header
     }
-  },
-
-  computed: {
-    companies() {
-        return this.$store.state.companies
-    }
-  },
-
-  mounted() {
-      this.$store.dispatch("getCompanies");
-  }
+ 
 };
 </script>
